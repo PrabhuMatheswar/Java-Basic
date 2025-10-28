@@ -1,35 +1,28 @@
 class Student {
+    String name;
+    int marks;
 
-    public String name;
-    public int marks;
-
-    static String schoolName = "Govt High";
-
-    public Student(String name, int marks) {
-        this.name = name;
-        this.marks = marks;
-    }
-
-    public void displayInfo() {
-        System.out.println("Name: " + name);
+    // Public instance method
+    public void displayDetails() {
+        System.out.println("Student Name: " + name);
         System.out.println("Marks: " + marks);
-        System.out.println("School: " + schoolName);
     }
 
-    static void showSchool() {
-        System.out.println("All students belong to " + schoolName);
+    // Static method
+    static void collegeInfo() {
+        System.out.println("College: SRM Engineering College");
     }
 }
-public class Marks {
+
+public class Example {
     public static void main(String[] args) {
+        // Calling static method without creating object
+        Student.collegeInfo();
 
-        Student.showSchool();
-
-        Student s1 = new Student("Ram", 90);
-        Student s2 = new Student("Ravi", 85);
-
-        s1.displayInfo();
-       
-        s2.displayInfo();
+        // Creating object for instance method
+        Student s1 = new Student();
+        s1.name = "Kumar";
+        s1.marks = 95;
+        s1.displayDetails();
     }
 }
